@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STOP WATCH</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="holder">
+        <div class="header">
+            <h1 >STOP WATCH</h1>
+        </div>
+        
+    <div class="cards">
+        <div class="card">
+            <div class="hours">
+                <span>00</span>
+            </div>
+            <div class="text">
+                <h1>Hours</h1>
+            </div>
+           </div>
+           <div class="card">
+               <div class="minutes">
+                   <span>00</span>
+               </div>
+               <div  class="text">
+                   <h1>Minutes</h1>
+               </div>
+           </div>
+           <div class=" sec card ">
+               <div class="seconds">
+                   <span>00</span>
+               </div>
+               <div  class="sectext text">
+                   <h1>Seconds</h1>
+               </div>
+           </div>
+    </div>
+<div class="btns">
+    <div class="btn start">
+        <h1>START</h1>
+    </div>
+    <div class="btn stop">
+        <h1>STOP</h1>
+    </div>
+    <div class="btn reset">
+        <h1>RESET</h1>
+    </div>
+</div>
+        <div class="shadow">
+
+        </div>
+    </div>
+    <script>/*
+        function clock(){
+
+        
+        var hours=document.querySelector(".hours>span")
+        var minutess=document.querySelector(".minutes>span")
+        var secondss=document.querySelector(".seconds>span")
+        var h=new Date().getHours();
+        if(h==0){
+ h=12;
+        }
+        if(h>12){
+            h-=12;
+        }
+        var m=new Date().getMinutes();
+        var s=new Date().getSeconds();
+        hours.innerHTML=h;
+        minutess.innerHTML=m;
+        secondss.innerHTML=s
+        }
+        var interval=setInterval(clock,1000)*/
+    </script>
+    <script>
+         var interval
+        var start=document.querySelector(".start")
+        var stop=document.querySelector(".stop")
+        var reset=document.querySelector(".reset")
+          var secondss=document.querySelector(".seconds>span")
+          var minutess=document.querySelector(".minutes>span")
+          var hours=document.querySelector(".hours>span")
+          hours.innerHTML=00
+          minutess.innerHTML=00
+          secondss.innerHTML=00
+          start.addEventListener("click",()=>{
+             start.classList.add("btn-active")
+            
+              var interval=setInterval(seconds,1000)
+              stop.addEventListener("click",()=>{
+              stop.classList.add("btn.active")
+              start.classList.remove("btn-active");
+              clearInterval(interval)
+          })
+          })
+          reset.addEventListener("click",()=>{
+            hours.innerHTML=00
+          minutess.innerHTML=00
+          secondss.innerHTML=00
+          })
+         
+
+        function seconds(){
+
+        
+        /*var hours=document.querySelector(".hours>span")
+        var minutess=document.querySelector(".minutes>span")
+        var secondss=document.querySelector(".seconds>span")
+        /*var h=new Date().getHours();
+        if(h==0){
+ h=12;
+        }
+        if(h>12){
+            h-=12;
+        }
+        var m=new Date().getMinutes();
+        var s=new Date().getSeconds();
+        hours.innerHTML=h;
+        minutess.innerHTML=m;
+        secondss.innerHTML=0*/
+        secondss.innerHTML++;
+        var sec=secondss.innerHTML;
+        if(sec>60){
+            secondss.innerHTML=0
+            minutess.innerHTML++;
+            if(minutess.innerHTML>60){
+                minutess.innerHTM=0;
+                hours.innerHTML++;
+            }
+        }}
+        
+    </script>
+</body>
+</html>
